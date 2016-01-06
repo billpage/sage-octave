@@ -291,13 +291,10 @@ class Octave(Expect):
             return self._eval_line_using_file(line)
         try:
             E = self._expect
-            # debug
-            # self._synchronize(cmd='1+%s\n')
             verbose("in = '%s'"%line,level=3)
             E.sendline(line)
             E.expect(self._prompt)
             out = E.before
-            # debug
             verbose("out = '%s'"%out,level=3)
         except EOF:
             if self._quit_string() in line:
@@ -305,7 +302,7 @@ class Octave(Expect):
         except KeyboardInterrupt:
             self._keyboard_interrupt()
         if reformat:
-            if 'syntax error' in out:
+            if '>>> ' in out and 'syntax error' in out:
                 raise SyntaxError(out)
         out = "\n".join(out.splitlines()[1:])
         return out
@@ -402,7 +399,7 @@ class Octave(Expect):
         """
         cmd = '%s=%s;'%(var,value)
         out = self.eval(cmd)
-        if out.find("error") != -1 or out.find("Error") != -1:
+        if out.find(">>> ") and (out.find("error") != -1 or out.find("Error") != -1):
             raise TypeError("Error executing code in Octave\nCODE:\n\t%s\nOctave ERROR:\n\t%s"%(cmd, out))
 
     def get(self, var):
