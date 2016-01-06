@@ -152,7 +152,7 @@ EXAMPLES::
 #*****************************************************************************
 
 import os
-from expect import Expect, ExpectElement
+from sage.interfaces.expect import Expect, ExpectElement
 from sage.misc.misc import verbose
 
 
