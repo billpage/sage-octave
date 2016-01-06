@@ -17,5 +17,5 @@ setup(name='sage_octave',
       author_email='bill.page@newsynthesis.org',
       license='GPL',
       py_modules=["octave"],
-      install_requires=['sage'],
+      #install_requires=['sage'],
       zip_safe=False)
