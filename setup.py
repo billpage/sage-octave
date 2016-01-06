@@ -9,7 +9,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(name='sage_octave',
-      version='0.1.0',
+      version='0.1.1',
       description='Improved version of the octave interface for Sage',
       long_description=long_description,
       url='http://github.com/billpage/sage-octave',
