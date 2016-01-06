@@ -9,14 +9,19 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(name='sage_octave',
-      version='0.1.3',
+      version='0.1.4',
       description='Improved version of the octave interface for Sage',
       long_description=long_description,
       keywords='sagemath interface octave',
       classifiers=[
           'Development Status :: 3 - Alpha',
+          'Environment :: Console',
+          'Environment :: Web Environment',
+          'Intended Audience :: Developers',
+          'Intended Audience :: End Users/Desktop',
           'Intended Audience :: Science/Research',
           'Topic :: Scientific/Engineering :: Mathematics',
+          'Topic :: Scientific/Engineering :: Interface Engine/Protocol Translator',
           'License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)',
           'Programming Language :: Python :: 2',
           'Programming Language :: Python :: 2.6',
